@@ -40,14 +40,14 @@
 (
     deffacts Initial_Puzzle
       (Puzzle_8 (Location 1) (isUsed YES) (Numeral 1))
-      (Puzzle_8 (Location 2) (isUsed YES) (Numeral 2))
-      (Puzzle_8 (Location 3) (isUsed YES) (Numeral 3))
-      (Puzzle_8 (Location 4) (isUsed NO) (Numeral 9))
-      (Puzzle_8 (Location 5) (isUsed YES) (Numeral 4))
-      (Puzzle_8 (Location 6) (isUsed YES) (Numeral 5))
+      (Puzzle_8 (Location 2) (isUsed YES) (Numeral 5))
+      (Puzzle_8 (Location 3) (isUsed YES) (Numeral 2))
+      (Puzzle_8 (Location 4) (isUsed YES) (Numeral 4))
+      (Puzzle_8 (Location 5) (isUsed YES) (Numeral 8))
+      (Puzzle_8 (Location 6) (isUsed YES) (Numeral 3))
       (Puzzle_8 (Location 7) (isUsed YES) (Numeral 7))
-      (Puzzle_8 (Location 8) (isUsed YES) (Numeral 8))
-      (Puzzle_8 (Location 9) (isUsed YES) (Numeral 6))
+      (Puzzle_8 (Location 8) (isUsed YES) (Numeral 6))
+      (Puzzle_8 (Location 9) (isUsed NO) (Numeral 9))
 )
 
 ;; Таблица переходов состояний (из №ячейки в №ячейки)
@@ -170,7 +170,7 @@
         ?to<-(Puzzle_8 (Location ?to_location) (isUsed NO) (Numeral ~?number))
         (Step_Of_Puzzle (from ?from_location) (to $?to_array&:(member$ ?to_location ?to_array)))
         ?st<-(state (flag_last YES) (Location ?state_location) (Depth ?dep) (visited_numerals $?some_nums))
-        (test (< ?dep 10))
+        (test (< ?dep 15))
         (test (<> ?fmeaning 2))
         (test (member$ ?to_location $?to_array))
         (
@@ -295,49 +295,3 @@
           )
           (retract ?penultimate_state)
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
